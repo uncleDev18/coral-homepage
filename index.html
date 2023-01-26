@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Coral Homepage</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Coral</div>
+            <ul>
+                <li>Home</li>
+                <li>Meme</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div class="banner">
+            <div class="glass-wrapper"
+                data-aos="fade-right"
+                data-aos-delay="300"
+                data-aos-duration="800">
+            </div>
+        </div>
+
+        <div class="hero-title">
+            <h3 data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">do somet<span>hing</span></h3>
+            <p data-aos="fade-left" data-aos-delay="600" data-aos-duration="700">Ext<span>ra</span></p>
+            <p data-aos="fade-left" data-aos-delay="600" data-aos-duration="700">ord<span>in</span> </p>
+            <p data-aos="fade-left" data-aos-delay="600" data-aos-duration="700">&nbsp &nbspa<span>ry</span></p>
+            <div class="details" data-aos="fade-left" data-aos-delay="700" data-aos-duration="700">
+                I'm searching fow knowledge but I ended up finding a family.
+            </div>
+            <div class="visit" data-aos="fade-left" data-aos-delay="800" data-aos-duration="700">
+                <button><a href="https://web.facebook.com/verastigue18">visit</a></button>
+            </div>
+        </div>
+
+        <div class="classList-pic">
+            <ul class="pic-list">
+                <li class="active" data-aos="fade-down" data-aos-delay="600" data-aos-duration="700" data-img="./images/img1.png">
+                    <div class="thumbnail" style="background: url('./images/img1.png')"></div>
+                </li>
+                <li data-aos="fade-down" data-aos-delay="600" data-aos-duration="700" data-img="./images/img2.png">
+                    <div class="thumbnail" style="background: url('./images/img2.png');"></div>
+                </li>
+                <li data-aos="fade-down" data-aos-delay="600" data-aos-duration="700" data-img="./images/img3.png">
+                    <div class="thumbnail" style="background: url('./images/img3.png');"></div>
+                </li>
+                <li data-aos="fade-down" data-aos-delay="600" data-aos-duration="700" data-img="./images/img4.png">
+                    <div class="thumbnail" style="background: url('./images/img4.png');"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        let places = document.querySelectorAll(".pic-list li");
+        let active = "./images/img1.png";
+
+        places.forEach((e) => {
+        e.addEventListener("mouseenter", (event) => {
+            places.forEach((e) => {
+            e.classList.remove("active");
+            });
+
+            event.target.classList.add("active");
+            active = event.target.getAttribute("data-img");
+            let banner = document.querySelector(".banner");
+            banner.style.backgroundImage = `url('${active}')`;
+        });
+        });
+    </script>
+</body>
+</html>
